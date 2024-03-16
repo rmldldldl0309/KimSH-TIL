@@ -51,34 +51,42 @@
 * Code : 부산에 있는 할리스 커피 지점 정보 받아오기
 
 ```python
-from selenium import webdriver
-import time
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
+    from bs4 import BeautifulSoup
+    import pandas as pd
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.common.keys import Keys
+    from selenium import webdriver
+    import time
 
-# chrome 이용
-driver = webdriver.Chrome()
+    driver = webdriver.Chrome()
 
-# 할리스 커피 이동
-url = 'https://www.hollys.co.kr/store/korea/korStore2.do'
-driver.get(url)
-time.sleep(0.5)
+    url = 'https://www.hollys.co.kr/store/korea/korStore2.do'
 
-# 검색창에 store
-search_input = driver.find_element(By.ID, 'store')
-search_input.send_keys('부산')
-time.sleep(0.5)
+    driver.get(url)
 
+    # 부산 데이터를 찾기 위해 검색창에 부산 검색
+    search_input = driver.find_element(By.ID, 'store')
+    search_input.send_keys('부산')
+    time.sleep(0.5)
+    search_input.send_keys(Keys.ENTER)
+    time.sleep(0.5)
 
-search_input.send_keys(Keys.ENTER)
-time.sleep(0.5)
+    # 응답받은 HTML 을 BeautifulSoup 클래스의 객체 형태로 생성 및 반환
+    html = driver.page_source
+    soup = BeautifulSoup(html, 'html.parser')
 
-busan_store = driver.find_elements(By.XPATH, '//*[@id="contents"]/div[2]/fieldset/fieldset/div[1]/table/tbody')
-time.sleep(0.5)
+    # tb_store 클래스인 table 아래 tbody > tr > td
+    store_name = soup.select('table.tb_store > tbody > tr > td')
 
-for busan_store_elements in busan_store:
-    # text만 골라서 출력
-    store_info = busan_store_elements.text
-    print(store_info)
+    store_info = []
 
+    for index in store_name:
+        print(index.text.strip())ㄴ
+        store_info.append(index.text)
+
+    df = pd.DataFrame()
+    df['store_name'] = store_info
+
+    df.to_csv('./hollys_info.csv')
+    
 ```
