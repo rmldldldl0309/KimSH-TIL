@@ -4,6 +4,8 @@
 
 ## Web Scrapping
 
+* 웹 스크래핑 : 특정 웹사이트에서 데이터를 추출하는 방법, 웹 사이트의 특정 데이터 집합에 초점을 맞추며 추출한 데이터를 CSV, XML, JSON 등으로 변환
+
 * BeautifulSoup : 파이썬 스크래핑 패키지
     * `from bs4 import BeautifulSoup`
 
@@ -44,6 +46,8 @@
 ```
 
 ## Web Crawling 
+
+* 웹 크롤링 : 웹 사이트의 모든 페이지를 방분하여 콘텐츠를 색인화하고 저장한다
 
 * webdriver : 
     * `from selenium import webdriver`
