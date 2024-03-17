@@ -94,3 +94,9 @@
     df.to_csv('./hollys_info.csv')
     
 ```
+
+## 참조
+
+* https://library.gabia.com/contents/9239/
+
+* https://beomi.github.io/2017/02/27/HowToMakeWebCrawler-With-Selenium/
