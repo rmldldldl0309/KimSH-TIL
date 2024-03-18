@@ -49,19 +49,19 @@
 # ArrayList
 
 ```java
-     ArrayList<String> arraylist = new ArrayList<String>(5);
+     ArrayList<String> arraylist = new ArrayList<String>();
 ```
 
-## ArrayList란?
+* ArrayList란?
 
-* 배열을 통해 리스트를 구현한 것
+    * 배열을 통해 리스트를 구현한 것
 
-## ArrayList의 특징
+* ArrayList의 특징
 
-* 내부적으로 `Object[]`배열을 이용하여 요소를 저장
-* 배열을 이용하기에 인덱스를 이용하여 빠르게 요소에 접근이 가능
-* 데이터 적재량에 따라 공간의 크기들 동적으로 사용가능
-* 데이터 삽입/삭제 시 요소들의 위치를 자동으로 앞, 뒤로 이동시키기 때문에 동작이 느림
+    * 내부적으로 `Object[]`배열을 이용하여 요소를 저장
+    * 배열을 이용하기에 인덱스를 이용하여 빠르게 요소에 접근이 가능
+    * 데이터 적재량에 따라 공간의 크기들 동적으로 사용가능
+    * 데이터 삽입/삭제 시 요소들의 위치를 자동으로 앞, 뒤로 이동시키기 때문에 동작이 느림
 
 # 참조
 
