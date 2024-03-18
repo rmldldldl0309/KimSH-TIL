@@ -1,6 +1,4 @@
-# Array versus List
-
-## Array (배열)
+# Array (배열)
 
 ```java
     int[] arr = new int[5];
@@ -65,6 +63,6 @@
 
 # 참조
 
-* https://ongveloper.tistory.com/403
-* https://inpa.tistory.com/entry/JAVA-%E2%98%95-ArrayList-%EA%B5%AC%EC%A1%B0-%EC%82%AC%EC%9A%A9%EB%B2%95
-* https://jy-tblog.tistory.com/38
+- https://ongveloper.tistory.com/403
+- https://inpa.tistory.com/entry/JAVA-%E2%98%95-ArrayList-%EA%B5%AC%EC%A1%B0-%EC%82%AC%EC%9A%A9%EB%B2%95
+- https://jy-tblog.tistory.com/38

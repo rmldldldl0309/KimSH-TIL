@@ -1,0 +1,84 @@
+# 클래스
+
+* 공통적 성질을 가진 대상들을 정의한 것, 정의된 속성 및 메서드를 이용하여 객체를 생성할 수 있다
+* 객체의 상태를 나타내는 필드(field)와 객체의 행동을 나타내는 메소드(method)로 구성
+
+## 클래스 선언 방법
+
+```java
+    [acess modifier] class ClassName {
+        // 필드
+        // 메서드
+    }
+```
+
+> access modifier (접근 제어자) : `public`, `private`, `protected`, default
+> ClassName : 클래스의 이름은 관례에 따라 항상 대문자로 시작해야 한다
+
+## 필드
+
+* 해당 클래스의 객체가 가질 수 있는 정보나 상태를 정의 (=속성)
+* 클래스 내부에 선언되어 클래스의 모든 객체에서 공유되거나 개별적으로 값을 가질 수 있음
+* 선언된 위치와 선언자에 따라 구분이 가능하다
+    * 클래스 변수 (static variable) : `static`키워드를 가지는 변수
+    * 인스턴스 변수 (instance variable) : `static`키워드를 가지지 않는 변수
+    * 지역 변수 (local variable) : 메서드나 생성자 블럭 내에 위치한 변수
+
+```java
+    class Example {
+    static int classVariable = 1;   // 클래스 변수 선언
+    int instanceVariable = 2;       // 인스턴스 변수 선언
+    
+    int method() {
+    	int localVariable = 3;      // 지역 변수 선언
+        return localVariable;
+    }
+}
+```
+
+## 메서드
+
+* 클래스 안에 있는 함수를 지칭, 객체의 행동을 구현
+* `static`키워드 유무에 따라 2가지로 구별가능, 
+    * 클래스 메서드 : `static` O, 내에서 인스턴스 변수 사용 불가
+    * 인스턴스 메서드 : `static` X
+
+## 메서드 정의
+
+```java
+    accessModifier returnType methodName(parameters) {
+        // 구현부
+    }
+```
+> return type : 메서드가 반환하는 값의 타입, 없는 경우 `void`
+> methodName : 메서드 이름은 관례에 따라 소문자로 시작
+> parameter : 메서드가 받아들이는 입력값 (매개변수)
+
+# 객체 지향 프로그램
+
+* 객체 지향 프로그램에서는 모든 데이터를 객체로 취급
+
+## 객체
+
+* 클래스에 의해 생성되는 인스턴스
+* 실제로 존재하는 것, 사물 또는 개념
+
+## 객체 생성 방법
+
+```java
+    ClassName variable =  new ClassName();
+```
+
+> new : 인스턴스를 생성해주는 역할, heap영역(메모리영역)에 저장할 공간 할당받아 참조값을 객체에 반환 후 생성자 호출
+
+## 인스턴스 변수 및 메서드 접근
+
+```java
+    referenceVariable.Variable;   // 변수 접근
+    referenceVariable.Method();   // 메서드 접근
+```
+
+# 참조
+- https://inpa.tistory.com/entry/JAVA-%E2%98%95-%EA%B0%9D%EC%B2%B4-%EC%A7%80%ED%96%A5OOP-%ED%81%B4%EB%9E%98%EC%8A%A4-%EB%AC%B8%EB%B2%95-%F0%9F%92%AF-%EC%B4%9D%EC%A0%95%EB%A6%AC#recentEntries
+- https://www.tcpschool.com/java/java_class_intro
+- https://doozi0316.tistory.com/entry/JAVA-5%EC%A3%BC%EC%B0%A8-%ED%81%B4%EB%9E%98%EC%8A%A4%ED%81%B4%EB%9E%98%EC%8A%A4-%EA%B0%9D%EC%B2%B4-new-%EB%A9%94%EC%86%8C%EB%93%9C-%EC%83%9D%EC%84%B1%EC%9E%90-this
