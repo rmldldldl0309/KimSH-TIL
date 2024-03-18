@@ -1,4 +1,6 @@
-# Array (배열)
+# Array versus List
+
+## Array (배열)
 
 ```java
     int[] arr = new int[5];
