@@ -35,7 +35,7 @@
 
 ## typeof
 
-* `typeof`연산자를 사용하여 피연샂나의 자료형을 나타내는 문자열을 반환
+* `typeof`연산자를 사용하여 피연산자의 자료형을 나타내는 문자열을 반환
 
 ```JS
     typeof Symbol(); // symbol
@@ -45,9 +45,9 @@
     function graduate{
         console.log('Congratulation!');
     }
-    typeof funct     // function
+    typeof graduate;     // function
 
-    typeof null      // Object
+    typeof null;      // Object
 
 ```
 
@@ -135,4 +135,5 @@
 # Reference
 
 * https://developer.mozilla.org/ko/
+* https://ko.javascript.info/first-steps
 * https://prickle-textbook-12d.notion.site/6c89fd9693e648aa9db794aab2832408
