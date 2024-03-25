@@ -94,6 +94,9 @@
 
 ### Arrorw Function
 
+* 본문이 한줄인 함수를 작성할 때 유용
+* 본문이 한줄이 아닌 경우 중괄호를 포함하여 화살표함수를 작성
+
 ```JS
     // 기본 형태
     const func = function(a, b, c) {
@@ -132,6 +135,7 @@
 # 참조
 
 * https://developer.mozilla.org/ko/
+* https://ko.javascript.info/arrow-functions-basics
 * https://ko.wikipedia.org/wiki/%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98_(%EC%BB%B4%ED%93%A8%ED%84%B0_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
 * https://prickle-textbook-12d.notion.site/e598e465514a465f9a8a1d788390d117
 
