@@ -20,7 +20,7 @@
 * `Number`가 안정적으로 나타낼 수 있는 최대치 2^53 - 1 보다 큰 정수를 표현 할 수 있다
 * 정수 리터럴 끝에 n을 붙여 만들 수 있다
 
-```java
+```JS
     const bigInt 9007199254740992n;
 ```
 
@@ -31,7 +31,7 @@
 * 한번 정한 문자열은 변하지 않는다
 * `${}`안에 변수나 표현식을 `\`\`\`로 감싸 넣으면 문자열 중간에 집어 넣을 수 있다
 
-```java
+```JS
     const car1 = 'sonata';
     const car2 = "avante";
     const car3 = `K5`
@@ -70,7 +70,7 @@
     * 키는 문자열이나 심볼, 값은 어느 자료형이던 상관 X
 * 객체를 생성하는 방법으로는 `Object()`객체 생성자 함수 이용, 객체 리터럴 이용, 생성자 함수이용이 있다
 
-```java
+```JS
     let snack = {
         name: "whiteheim",
         make: "crown",
@@ -94,7 +94,7 @@
 
 * 점 표기법, 대괄호 표기법 두 가지를 이용하여 객체의 프로퍼티에 접근할 수 있다
  
- ```java
+ ```JS
     let student = {
         'name' : 'ksh',
         'gender' : 'male',
@@ -108,7 +108,7 @@
 * 객체가 소유한 프로퍼티에 새로운 값 할당 시 프로퍼티값 갱신
 * 객체가 소유하지 않는 프로퍼티에 새로운 값 할당 시 새로운 프로퍼티가 동적으로 생성된다
 
-```java
+```JS
     student.name = 'kwm';
     console.log(student.name);
     
@@ -118,7 +118,7 @@
 
 * for in 문을 사용하여 객체에 포함된 모든 프로퍼티에 대해 루프 수행 가능
 
-```java
+```JS
     for (info in student){
     console.log(info, student[info])
     }
@@ -148,7 +148,7 @@
 
 * 값들을 쉼표로 구분하여 대괄호로 묶어 표기, 인덱스를 이용하여 접근이 가능하다
 
-```java
+```JS
     let rank = [
         'first', 'second', 'third', 'fourth', 'fifth' 
     ]
@@ -158,7 +158,7 @@
 
 * Array() 생성자 함수를 이용
 
-```java
+```JS
     const rank = new Array(5);
         console.log(rank);
 ```
@@ -170,7 +170,7 @@
 * 인덱스를 사용하여 값을 할당할 수 있으며, 순서는 상관이 없다
 * 값이 할당되지 않은 요소는 `undefined`값을 가진다
 
-```java
+```JS
    const refrigerator = [];
 
    refrigerator[1] = 'egg';
@@ -182,7 +182,7 @@
 
 * `delete`연산자를 사용하여 요소를 삭제할 수 있다, 이때 배열의 길이는 변함이 없다
 
-```java
+```JS
     console.log(refrigerator.length);   // 11
     delete refrigerator[1];
     console.log(refrigerator.length);   // 11
