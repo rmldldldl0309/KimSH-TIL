@@ -62,7 +62,67 @@
 * 변수 선언시에 값을 할당하지 않으면 자동으로 `undefined`가 할당되며, 이는 값이 할당되지 않은 상태를 의미한다
 * 변수에 의도적으로 할당할 수 있으나 권장되지 않는다
 
-## 참조타입
+## 참조타입 (객체 타입)
+
+### 객체 생성
+
+* `{}`를 이용하여 만들 수 있으며, `key : value`의 한 쌍으로 구성된 프로퍼티를 여러가지 넣을 수 있다
+    * 키는 문자열이나 심볼, 값은 어느 자료형이던 상관 X
+* 객체를 생성하는 방법으로는 `Object()`객체 생성자 함수 이용, 객체 리터럴 이용, 생성자 함수이용이 있다
+
+```java
+    let snack = {
+        name: "whiteheim",
+        make: "crown",
+    }
+
+    // Object 생성자 이용
+    let objectValue = new Object();
+
+    // 객체 리터럴 이용
+    let objectValue = {};
+
+    // 생성자 함수 이용
+    function User(name, age) {
+        this.name = name;
+        this.age = age;
+    };
+    const user1 = new User('ksh', 25);
+```
+
+### 객체 접근
+
+* 점 표기법, 대괄호 표기법 두 가지를 이용하여 객체의 프로퍼티에 접근할 수 있다
+ 
+ ```java
+    let student = {
+        'name' : 'ksh',
+        'gender' : 'male',
+        'school-name' : 'JEIL',
+    }
+
+    console.log(student.name);
+    console.log(student["school-name"]);
+ ```
+
+* 객체가 소유한 프로퍼티에 새로운 값 할당 시 프로퍼티값 갱신
+* 객체가 소유하지 않는 프로퍼티에 새로운 값 할당 시 새로운 프로퍼티가 동적으로 생성된다
+
+```java
+    student.name = 'kwm';
+    console.log(student.name);
+    
+    student.age = 20;
+    console.log(student.age);
+```
+
+* for in 문을 사용하여 객체에 포함된 모든 프로퍼티에 대해 루프 수행 가능
+
+```java
+    for (info in student){
+    console.log(info, student[info])
+    }
+```
 
 ### Symbol
 
@@ -80,9 +140,71 @@
 
 ```
 
+# 배열
+
+## 배열 생성
+
+### 배열 리터럴
+
+* 값들을 쉼표로 구분하여 대괄호로 묶어 표기, 인덱스를 이용하여 접근이 가능하다
+
+```java
+    let rank = [
+        'first', 'second', 'third', 'fourth', 'fifth' 
+    ]
+```
+
+### 배열 생성자
+
+* Array() 생성자 함수를 이용
+
+```java
+    const rank = new Array(5);
+        console.log(rank);
+```
+
+## 배열 요소
+
+### 요소 추가 및 삭제
+
+* 인덱스를 사용하여 값을 할당할 수 있으며, 순서는 상관이 없다
+* 값이 할당되지 않은 요소는 `undefined`값을 가진다
+
+```java
+   const refrigerator = [];
+
+   refrigerator[1] = 'egg';
+   refrigerator[10] = 'milk';
+
+   console.log(refrigerator[1]) // egg
+   console.log(refrigerator[2]) // undefined
+```
+
+* `delete`연산자를 사용하여 요소를 삭제할 수 있다, 이때 배열의 길이는 변함이 없다
+
+```java
+    console.log(refrigerator.length);   // 11
+    delete refrigerator[1];
+    console.log(refrigerator.length);   // 11
+```
+
+### 프로퍼티
+
+* Array.length
+    * 배열의 길이(요소의 개수)를 나타낸다
+    * ***희소 배열*** : 배열 요소의 개수와 length 프로퍼티 값이 일치하지 않는 배열, 배열의 요소가 연속적이지 않다
+    * 가장 큰 인덱스가 변했을 경우에만 변경된다
+
 # 연산자
 
+특이점에 대해서만 기재
+
 ## 논리 연산자
+
+### 동등 연산자와 일치 연산자
+
+* == : 동등 연산자, 피연산자의 타입이 다른 경우 타입 변환을 거친 후 비교
+* === : 일치 연산자, 피연산자의 타입과 관계없이 비교
 
 ### AND & OR 연산
 
@@ -91,7 +213,6 @@
     console.log(false && 'milk');   // milk
     console.log(true || 'milk');    // milk
     console.log(false || 'milk');   // false
-
 ```
 
 ### null 병합 연산자
@@ -108,6 +229,21 @@
     console.log(value3);    // C
 
 ```
+
+### typeof 연산자
+
+* 피연자의 타입을 문자열 형태로 반환
+
+|          |           | return      |
+| -------- | --------- | ----------- |
+| 기본타입 | 숫자      | 'number'    |
+| 기본타입 | 문자열    | 'string'    |
+| 기본타입 | 불린값    | 'boolean'   |
+| 기본타입 | null      | 'object'    |
+| 기본타입 | undefined | 'undefined' |
+| 참조타입 | 객체      | 'object'    |
+| 참조타입 | 배열      | 'object'    |
+| 참조타입 | 함수      | 'function'  |
 
 # 변수
 
@@ -161,6 +297,6 @@
 
 # Reference
 
-* https://developer.mozilla.org/ko/docs/Glossary/Type
-* https://ko.javascript.info/first-steps
-* https://prickle-textbook-12d.notion.site/6c89fd9693e648aa9db794aab2832408
+* https://developer.mozilla.org/ko/docs/Glossary/Type , https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Property_accessors
+* https://ko.javascript.info/types , https://ko.javascript.info/object , https://ko.javascript.info/array
+* https://prickle-textbook-12d.notion.site/1e8e3a82090f41a580f3c46a8c37e15b , https://prickle-textbook-12d.notion.site/f37f01f4efeb4b5382d06ba76a0f4ad2
