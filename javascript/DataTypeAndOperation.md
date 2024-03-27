@@ -1,12 +1,70 @@
 # 데이터 타입
 
 * 자바스크립트의 데이터 타입은 맥락에 맞춰 유연하게 변화
-
 * 총 8가지의 데이터 타입이 존재
-    * 기본형: number, string, boolean, undeifined, null, null, Symbol, Bigint
+    * 기본형: Number, String, Boolean, undeifined, null, Symbol, Bigint
     * 참조형: object
+* `var`, `let`, `const` 키워드를 이용하여 변수를 선언하는데, 어떤 형태의 데이터를 저장하느냐에 따라 변수의 타입이 결정된다
+* `typeof`연산자를 사용하여 피연산자의 자료형을 나타내는 문자열을 반환할 수 있다
 
-## Symbol
+## 기본타입
+
+### Number
+
+* 자바스크립트에서 숫자 리터럴은 정수가 아닌 부동 수소점 값이다
+* 다른 타입의 값일 경우 Number()함수를 통해 숫자로 형변환할 수 있다
+* 일반적인 숫자외에 `Infinity`, `-Infinity`, `NaN`과 같은 특수 숫자 값이 존재한다
+
+### BigInt
+
+* `Number`가 안정적으로 나타낼 수 있는 최대치 2^53 - 1 보다 큰 정수를 표현 할 수 있다
+* 정수 리터럴 끝에 n을 붙여 만들 수 있다
+
+```java
+    const bigInt 9007199254740992n;
+```
+
+### String
+
+* `''`, `""`, `\`\`\`, 총 3개의 따옴표로 문자열을 묶어 사용할 수 있다
+* 문자열은 유사 배열로 인덱스를 통해 접근할 수 있다
+* 한번 정한 문자열은 변하지 않는다
+* `${}`안에 변수나 표현식을 `\`\`\`로 감싸 넣으면 문자열 중간에 집어 넣을 수 있다
+
+```java
+    const car1 = 'sonata';
+    const car2 = "avante";
+    const car3 = `K5`
+
+    for (index = 0; index < car1.length; index ++){
+        console.log(car1[index]);
+    }
+
+    console.log(`내 차는 ${car2}` );
+```
+
+### Boolean
+
+* `boolean`타입의 값이 요구될 때 조건식이나 불린 타입의 값 뿐만아니라 다른 타입의 값을 사용할 수 있다
+* 참으로 볼 수 있는 값을 Truthy, 거짓으로 볼 수 있는 값을 Falsy라 한다
+    * Falsy : false, null, undefined, NaN, 0, ''
+    * Truthy : 나머지 모든 값 ({}, [] 포함)
+
+### null
+
+* 자바스크립트에서 `null`값은 존재하지 않는 값, 비어있는 값, 알수 없는 값을 나타낸다
+* 자바스크립트에서는 대소문자를 구별하기 때문에 `null`은 Null, NULL등과 다르다
+* `typeof`연산자를 이용했을 때 Object가 반환된다
+    * https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/typeof#null
+
+### undefined
+
+* 변수 선언시에 값을 할당하지 않으면 자동으로 `undefined`가 할당되며, 이는 값이 할당되지 않은 상태를 의미한다
+* 변수에 의도적으로 할당할 수 있으나 권장되지 않는다
+
+## 참조타입
+
+### Symbol
 
 * 객체에 속성을 추가할 때 고유한 키를 부여하여 다른 코드와 충돌하지 않도록 한다
 
@@ -21,37 +79,6 @@
     mayCar === yourCar;
 
 ```
-
-## boolean
-
-* `boolean`타입의 값이 요구될 때 조건식이나 불린 타입의 값 뿐만아니라 다른 타입의 값을 사용할 수 있다
-* 참으로 볼 수 있는 값을 Truthy, 거짓으로 볼 수 있는 값을 Falsy라 한다
-    * Falsy : false, null, undefined, NaN, 0, ''
-    * Truthy : 나머지 모든 값 ({}, [] 포함)
-
-## BigInt
-
-* `Number`가 안정적으로 나타낼 수 있는 최대치 2^53 - 1 보다 큰 정수를 표현 할 수 있다
-
-## typeof
-
-* `typeof`연산자를 사용하여 피연산자의 자료형을 나타내는 문자열을 반환
-
-```JS
-    typeof Symbol(); // symbol
-    typeof [];       // Object
-    typeof true;     // boolean
-
-    function graduate{
-        console.log('Congratulation!');
-    }
-    typeof graduate;     // function
-
-    typeof null;      // Object
-
-```
-
-> null의 경우 문자열로 `Object`가 반환된다.<br/> https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/typeof#null
 
 # 연산자
 
@@ -134,6 +161,6 @@
 
 # Reference
 
-* https://developer.mozilla.org/ko/
+* https://developer.mozilla.org/ko/docs/Glossary/Type
 * https://ko.javascript.info/first-steps
 * https://prickle-textbook-12d.notion.site/6c89fd9693e648aa9db794aab2832408
