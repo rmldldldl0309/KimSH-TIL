@@ -62,7 +62,7 @@
     * Function() 생성자 함수
 
     ```JS
-        const multi = new Function('num1', 'num2', 'return num1 * num2');
+        const product = new Function('num1', 'num2', 'return num1 * num2');
     ```
 
 ## ▶ 함수 호이스팅
@@ -78,7 +78,7 @@
 * 인수 (argument) : 함수에 전달되는 값
 
 ```JS
-    const func (parameter1, parameter2 = 'A') {
+    const func = (parameter1, parameter2 = 'A') {
         console.log(parameter1, parameter2);
     };
 
@@ -141,12 +141,14 @@
 * 익명함수로만 사용가능하기 때문에 함수표현식 형태로 변수에 저장하여 사용
 * 주로 콜백함수로 많이 사용된다
 
+```JS
+    const product = (x, y) => x * y;
 
-## ▶ 함수의 형태
+    const  array = [a, b, c];
+    array.foreach(x => console.log(x));  // a, b, c
+```
 
-### - 
-
-### - IIFE (즉시 실행 함수)
+## ▶ IIFE (즉시 실행 함수)
 
 * 함수가 선언됨가 동시에 실행되는 함수
 
@@ -186,4 +188,3 @@
 * https://ko.javascript.info/arrow-functions-basics
 * https://ko.wikipedia.org/wiki/%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98_(%EC%BB%B4%ED%93%A8%ED%84%B0_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
 * https://prickle-textbook-12d.notion.site/e598e465514a465f9a8a1d788390d117
-
