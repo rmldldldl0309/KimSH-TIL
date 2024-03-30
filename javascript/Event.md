@@ -1,6 +1,6 @@
 # 이벤트
 
-* 이벤트 : 프로그래밍하고 있는 시스템에서 일어나는 사건이나 발생, 발생하는 시점이나 순서를 사전에 인지할 수 없으므로 일반적인 제어 흐름과는 다른 접근 방식이 필요
+이벤트는 프로그래밍하고 있는 시스템에서 일어나는 사건이나 발생을 의미한다, 발생하는 시점이나 순서를 사전에 인지할 수 없으므로 일반적인 제어 흐름과는 다른 접근 방식이 필요하다
 
 ## ▶ 이벤트 바인딩
 
@@ -17,7 +17,7 @@ Javascript와 HTML이 뒤섞이는 문제를 해결할 수 있지만, 이벤트 
 
 `addEventListener()` 메서드를 이용하여 바인딩하는 방식이다. 하나의 이벤트에 대해 하나 이상의 이벤트 핸들러를 추가할 수 있고, HTML요소 뿐만 아니라 DOM요소에대해서도 동작한다
 
-* `removeEventListner()`를 통해 이벤트 리수너를 제거할 수 있다. 단,
+* `removeEventListner()`를 통해 이벤트 리스너를 제거할 수 있다. 단, 같은 요소를 가진 것에 한하여 삭제가 가능하다
 
 ## ▶ 이벤트의 종류
 
@@ -72,9 +72,27 @@ Javascript와 HTML이 뒤섞이는 문제를 해결할 수 있지만, 이벤트 
 |focus out|요소가 포커스를 잃었을 때|
 |blur |요소가 포커스를 잃었을 때|
 
+## ▶ 이벤트 버블링과 캡쳐링
+
+버블링 : 한 요소에 이벤트가 발생할 때 요소에 할당된 핸들러가 동작하고, 가장 최상단의 조상 요소를 만날 때까지 부모 요소의 핸들러가 동작하는 현상<br/>기본적으로 브라우저의 이벤트들은 버블링 방식으로 전파된다. 단, 버블링이 진행되는 중에도 `target`은 맨 처음으로 이벤트가 일어났던 요소에 머무른다
+
+캡쳐링 : 한 요소에 이벤트가 발생되면, 그 요소 자손 요소의 이벤트도 같이 발생하는 현상, 기본적으로 브라우저의 이벤트 전파 방식은 버블링이 기본값이기에 따로 설정해주어야 한다<br/>
+`addEventListener()`함수의 3번째 매개변수로 `true`값을 주는 것으로 캡쳐링을 발동시킬 수 있다
+
+* `stopPropagation()`메서드를 통하여 버블링이 실행되는 것을 막을 수 있다
+
+## ▶ 이벤트 위임
+
+이벤트 위임을 이용하면 각 요소마다 각각 핸들러를 할당하지 않고도 여러 요소를 한번에 다룰 수 있게된다. 버블링 요소를 이용하여 자식요소들에 각각 이벤트 핸들러를 할당하지 않고, 부모 요소에 이벤트 핸들러를 등록하는 것으로 자식 요소들에게 발생한 이벤트를 관리할 수 있다. 
 
 # 참조
 
-* https://ko.javascript.info/mouse-events-basics
-* https://milooy.github.io/TIL/JavaScript/event.html#%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A6%E1%86%AB%E1%84%90%E1%85%B3-%E1%84%8C%E1%85%A9%E1%86%BC%E1%84%85%E1%85%B2
-* https://developer.mozilla.org/ko/docs/Web/API/ClipboardEvent
+* https://developer.mozilla.org/ko/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling_and_capture
+
+* 이벤트
+    * https://ko.javascript.info/mouse-events-basics
+    * https://milooy.github.io/TIL/JavaScript/event.html#%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A6%E1%86%AB%E1%84%90%E1%85%B3-%E1%84%8C%E1%85%A9%E1%86%BC%E1%84%85%E1%85%B2
+    * https://developer.mozilla.org/ko/docs/Web/API/ClipboardEvent
+
+* 버블링과 캡쳐링
+    * https://inpa.tistory.com/entry/JS-%F0%9F%93%9A-%EB%B2%84%EB%B8%94%EB%A7%81-%EC%BA%A1%EC%B3%90%EB%A7%81#%EC%9D%B4%EB%B2%A4%ED%8A%B8_%EB%B2%84%EB%B8%94%EB%A7%81
