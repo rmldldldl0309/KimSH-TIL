@@ -72,9 +72,22 @@ Javascript와 HTML이 뒤섞이는 문제를 해결할 수 있지만, 이벤트 
 |focus out|요소가 포커스를 잃었을 때|
 |blur |요소가 포커스를 잃었을 때|
 
+## ▶ 이벤트 객체
+
+### - 프로퍼티
+
+* `.target` : 이벤트가 처음 발생한 대상을 가리킨다
+* `.currentTarget` : 현재 이벤트가 발생하고 있는 대상
+* `.type` : 발생한 이벤트의 이름, 대소문자를 구분하지 않는다
+
+### - 메서드
+
+* `.preventDafault()` : 이벤트를 취소
+* `.stopPropagation()` : 이벤트의 DOM 전파를 멈춘다
+
 ## ▶ 이벤트 버블링과 캡쳐링
 
-버블링 : 한 요소에 이벤트가 발생할 때 요소에 할당된 핸들러가 동작하고, 가장 최상단의 조상 요소를 만날 때까지 부모 요소의 핸들러가 동작하는 현상<br/>기본적으로 브라우저의 이벤트들은 버블링 방식으로 전파된다. 단, 버블링이 진행되는 중에도 `target`은 맨 처음으로 이벤트가 일어났던 요소에 머무른다
+버블링 : 한 요소에 이벤트가 발생할 때 요소에 할당된 핸들러가 동작하고, 가장 최상단의 조상 요소를 만날 때까지 부모 요소의 핸들러가 동작하는 현상<br/>기본적으로 브라우저의 이벤트들은 버블링 방식으로 전파된다. 단, 버블링이 진행되는 중에도 `target`은 부모 요소의 핸들러가 동작함에도 맨 처음으로 이벤트가 일어났던 요소에 머무른다
 
 캡쳐링 : 한 요소에 이벤트가 발생되면, 그 요소 자손 요소의 이벤트도 같이 발생하는 현상, 기본적으로 브라우저의 이벤트 전파 방식은 버블링이 기본값이기에 따로 설정해주어야 한다<br/>
 `addEventListener()`함수의 3번째 매개변수로 `true`값을 주는 것으로 캡쳐링을 발동시킬 수 있다
@@ -93,6 +106,8 @@ Javascript와 HTML이 뒤섞이는 문제를 해결할 수 있지만, 이벤트 
     * https://ko.javascript.info/mouse-events-basics
     * https://milooy.github.io/TIL/JavaScript/event.html#%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A6%E1%86%AB%E1%84%90%E1%85%B3-%E1%84%8C%E1%85%A9%E1%86%BC%E1%84%85%E1%85%B2
     * https://developer.mozilla.org/ko/docs/Web/API/ClipboardEvent
+    * https://developer.mozilla.org/ko/docs/Web/API/Event
+    * https://cheonmro.github.io/2018/09/04/event-object/
 
 * 버블링과 캡쳐링
     * https://inpa.tistory.com/entry/JS-%F0%9F%93%9A-%EB%B2%84%EB%B8%94%EB%A7%81-%EC%BA%A1%EC%B3%90%EB%A7%81#%EC%9D%B4%EB%B2%A4%ED%8A%B8_%EB%B2%84%EB%B8%94%EB%A7%81
