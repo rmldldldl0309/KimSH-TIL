@@ -111,3 +111,11 @@
     * `?`: 모든 타입이 될 수 있다
     * `? extends T` : T 또는 T의 하위 타입
     * `? super T` : T 또는 T의 상위 타입
+
+# 참조
+
+* https://inpa.tistory.com/entry/JAVA-%E2%98%95-%EC%A0%9C%EB%84%A4%EB%A6%ADGenerics-%EA%B0%9C%EB%85%90-%EB%AC%B8%EB%B2%95-%EC%A0%95%EB%B3%B5%ED%95%98%EA%B8%B0#%ED%83%80%EC%9E%85_%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0_%EC%A0%95%EC%9D%98
+* https://hahahoho5915.tistory.com/69
+* https://www.nextree.io/generic-ihaehagi/
+* https://www.tcpschool.com/java/java_generic_concept
+* https://f-lab.kr/insight/understanding-java-generics?gad_source=1&gclid=Cj0KCQjw2a6wBhCVARIsABPeH1sbBHC6n5Qlr4XwXPJR-zkqgHjsZuoWi6l0iL1n-ClmR3IF5Qy930oaAm-tEALw_wcB
