@@ -90,7 +90,7 @@
 ```typescript
     interface instrument {
         type: string;
-        price: number;
+        price?: number;
     }
 
     let bandIns = {
