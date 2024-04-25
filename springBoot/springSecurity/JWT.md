@@ -87,7 +87,7 @@ JSON 웹 토큰은 `.`을 경계로 머리글, 페이로드, 서명 세 부분�
 
 API 또는 리소스에 액세스하기 위해 JWT를 획득하고 사용하는 방법은 다음과 같다.
 
-![JWT작동/출처:https://jwt.io/introduction](../resource/JWT/client-credentials-grant.png)
+![JWT작동/출처:https://jwt.io/introduction](../../resource/JWT/client-credentials-grant.png)
 
 1. 애플리케이션 또는 클라이언트가 인증 요청을 보낸다.
 2. 권한이 부여되면 권한 서버는 애플리케이션에 액세스 토큰을 반환한다.
